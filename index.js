@@ -103,29 +103,59 @@ let ucetambolunenler,
   siralisayilar,
   tekraredensayilar;
 
-// 3a çözümü
+enkucuk = sayilar[0]
+enbuyuk = sayilar[0]
+for (let i = 1; i<sayilar.length; i++){
+  if ( sayilar[i] < enbuyuk){ 
+    enkucuk = sayilar[i]
+  }
+    if (sayilar[i]> enbuyuk){
+      enbuyuk= sayilar[i]
+    }
+} 
+console.log('En küçük sayı:', enkucuk); 
+console.log('En büyük sayı:', enbuyuk); 
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi); 
+  }
+});
 
-// 3b çözümü:
+console.log('3\'e tam bölünen sayilar:', ucetambolunenler);
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
 
-// 3c çözümü:
+console.log('3\'e tam bölünen sayilarin toplami:', ucebolunenlerintoplami);
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
-// 3d çözümü
+console.log('500\'den küçük sayilar:', besyuzdenkucuksayilar);
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
-// 3e çözümü
+console.log('500\'den küçük sayilar küçükten büyüğe siralanmiş:', siralisayilar);
 
-/* kodlar buraya */
+tekraredensayilar = [];
+let tekrarSayilari = {}; 
 
-// 3f çözümü
+sayilar.forEach(sayi => {
+  if (tekrarSayilari[sayi]) {
+    tekrarSayilari[sayi]++; 
+  } else {
+    tekrarSayilari[sayi] = 1; 
+  }
+});
 
-/* kodlar buraya */
+for (let sayi in tekrarSayilari) {
+  if (tekrarSayilari[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayis, ${tekrarSayilari[sayi]} kere tekrar edilmiştir`);
+  }
+}
+
+console.log('Tekrar eden sayilar:', tekraredensayilar);
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
